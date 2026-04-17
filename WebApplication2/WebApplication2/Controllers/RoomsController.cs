@@ -1,6 +1,6 @@
 namespace WebApplication2.Controllers;
 
-public class AnimalsControllers
+public class RoomsController
 {
     
 }
