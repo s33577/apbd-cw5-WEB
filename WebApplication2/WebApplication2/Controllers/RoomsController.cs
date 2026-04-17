@@ -1,6 +1,14 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace WebApplication2.Controllers;
 
-public class RoomsController
+
+[ApiController]
+[Route("api/[controller]")]
+public class RoomsController : ControllerBase
 {
+    // GET api/rooms 
+    
+
     
 }
