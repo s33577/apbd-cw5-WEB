@@ -7,7 +7,7 @@ namespace WebApplication2.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ReservationController : ControllerBase
+public class ReservationsController : ControllerBase
 
 {
     // get /api/reservation/
