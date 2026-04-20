@@ -70,4 +70,14 @@ public class DataStore
             Status = "planned"
         }
     };
+
+    public static int GetNextRoomId()
+    {
+        return Rooms.Any() ? Rooms.Max(r => r.Id + 1) : 1;
+    }
+    
+    public static int GetNextReservationId()
+    {
+        return Reservations.Any() ? Reservations.Max(r => r.Id + 1) : 1;
+    }
 }
