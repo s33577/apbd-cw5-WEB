@@ -72,6 +72,43 @@ public class ReservationController : ControllerBase
 
     }
     
+    //put /api/reservatiuon/id
+    [HttpPut("{id}")]
+    public IActionResult UpdateReservation(int id, [FromBody] Reservation updatedReservation)
+    {
+        var reservation = DataStore.Reservations.FirstOrDefault(r => r.Id == id);
+        if (reservation == null)
+        {
+            return NotFound();
+        }
+        
+        reservation.RoomId = updatedReservation.RoomId;
+        reservation.OranizerName = updatedReservation.OranizerName;
+        reservation.Topic = updatedReservation.Topic;
+        reservation.StartTime = updatedReservation.StartTime;
+        reservation.EndTime = updatedReservation.EndTime;
+        reservation.Status = updatedReservation.Status;
+        
+        
+        return Ok(reservation);
+        
+    }
+
+    [HttpDelete("{id}")]
+
+    public IActionResult DeleteReservation(int id)
+    {
+        var reservation = DataStore.Reservations.FirstOrDefault(r => r.Id == id);
+        if (reservation == null)
+        {
+            return NotFound();
+        }
+        
+        DataStore.Reservations.Remove(reservation);
+        return NoContent();
+    }
+    
+    
     
     
     
